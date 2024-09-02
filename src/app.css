@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-content-light {
+  @apply text-gray-600;
+}
+
+
+.text-content-dark {
+  @apply text-white;
+}
+
+
+.text-head-light {
+  @apply text-gray-600;
+  @apply font-bold;
+}
+
+
+.text-head-dark {
+  @apply text-white;
+  @apply font-bold;
+}
