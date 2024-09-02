@@ -4,7 +4,7 @@
 	import Search from '$lib/components/Search.svelte';
 	import { DatabaseBackup, LayoutDashboard, Link, Network, type Icon } from 'lucide-svelte';
 	import { type ComponentType } from 'svelte';
-	import { Tooltip } from 'flowbite-svelte';
+	import { Tooltip ,Avatar } from 'flowbite-svelte';
 	export let isCollapsed = true;
 	type Tabstype = 'Dashboard' | 'Gateways' | 'Pairing' | 'Ota';
 	let tabsArr: Tabstype[] = ['Dashboard', 'Gateways', 'Pairing', 'Ota'];
@@ -25,7 +25,9 @@
 			{#if isCollapsed}
 				<span class="font-bold dark:text-dark">☰</span>
 			{:else}
-				<span class=" text-lg font-bold dark:text-dark">Keus<span class="text-primary-900">NMS</span></span>
+				<span class=" text-lg font-bold dark:text-dark"
+					>Keus<span class="text-primary-900">NMS</span></span
+				>
 			{/if}
 		</div>
 		<Search />
@@ -35,8 +37,7 @@
 	<div class="flex flex-1 overflow-y-auto">
 		<!-- Sidebar nav-->
 		<nav
-			class={`duration-300 ${isCollapsed ? 'w-16' : 'w-64'} sticky top-0 bg-white text-black dark:text-dark dark:bg-templateDarkClr`}
-			style="transition-property: width;"
+			class={` transition-[width] duration-300 ${isCollapsed ? 'w-16' : 'w-64'} sticky top-0 bg-white text-black dark:text-dark dark:bg-templateDarkClr`}
 		>
 			<div>
 				{#each tabsArr as tab, i}
@@ -63,7 +64,7 @@
 
 		<!-- SLOT -->
 		<div
-			class="p-4 flex-1 bg-templateClr dark:bg-black h-full overflow-y-auto"
+			class="p-4 flex-1 bg-templateClr dark:bg-gray-900 h-full overflow-y-auto"
 			on:click={() => (isCollapsed = true)}
 		>
 			<slot></slot>

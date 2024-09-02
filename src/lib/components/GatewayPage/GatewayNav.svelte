@@ -1,13 +1,18 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import Button from '../common/Button.svelte';
 
 	type navOptions = 'Home Info' | 'Rooms & Devices' | 'Backups' | 'Deployments';
 	let navArr: navOptions[] = ['Home Info', 'Rooms & Devices', 'Backups', 'Deployments'];
 
 	let active: navOptions = 'Home Info';
+	const dispatch = createEventDispatcher();
 
 	const changeOption = (navTab: navOptions) => {
 		active = navTab;
+		dispatch('onTabChange', {
+			tab: active
+		});
 	};
 </script>
 

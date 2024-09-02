@@ -9,7 +9,7 @@
 	<div class="flex items-center justify-between">
 		<!-- Basic info -->
 		<div class="">
-			<p class="text-xs text-light dark:text-dark leading-6">
+			<p class="text-sm text-light dark:text-dark leading-6 p-4">
 				<b class="font-semibold">Customer Name : </b>Brijesh Chandwani
 				<br />
 				<b class="font-semibold">Lead ID : </b>
@@ -23,10 +23,10 @@
 			</p>
 		</div>
 		<!-- QR code -->
-		<QrCode class="h-24 w-24" />
+		<QrCode class="h-24 w-24 text-light dark:text-dark" />
 	</div>
 	<!-- Gateways -->
-	<div class="m-2 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+	<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5  justify-items-center p-4">
 		<GatewayCard />
 		<GatewayCard />
 		<GatewayCard />

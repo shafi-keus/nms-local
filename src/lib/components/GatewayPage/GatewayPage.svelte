@@ -1,16 +1,24 @@
-<script>
+<script lang="ts">
 	import Button from '../common/Button.svelte';
 	import Card from '../common/Card.svelte';
 	import GatewayCard from '../GatewayCard.svelte';
 	import GatewayNav from './GatewayNav.svelte';
-	import Modal from '../Modal.svelte';
+	import Modal from '../common/Modal.svelte';
 	import GroupButton from '../GroupButton.svelte';
 	import Info from '../Info.svelte';
+	import Rooms from '../Rooms.svelte';
 	let open = false;
+	type navOptions = 'Home Info' | 'Rooms & Devices' | 'Backups' | 'Deployments';
+
+	const tabChange = (event: any) => {
+		console.log(event.detail.tab);
+		tab = event.detail.tab;
+	};
+	let tab: navOptions = 'Home Info';
 </script>
 
 <div class="bg-white dark:bg-templateDarkClr p-3 rounded-md">
-	<GatewayNav />
+	<GatewayNav on:onTabChange={tabChange} />
 	<!-- <div class="mb-3"></div>
 	<Button color="alternative" size="xs" on:click={() => console.log('hii')}>hii</Button>
 	<Button color="blue" size="sm">hii</Button>
@@ -52,6 +60,10 @@
 	<input type="radio" name="radio" class="border-blue-600" />
 	<input type="radio" name="radio" />
 	<GroupButton/> -->
-	<Info/>
 
+	{#if tab == 'Home Info'}
+		<Info />
+	{:else if tab == 'Rooms & Devices'}
+		<Rooms />
+	{/if}
 </div>

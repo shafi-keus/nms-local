@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { writable } from "svelte/store";
+	import { writable } from 'svelte/store';
 
 	type deviceType = {
 		type: string;
@@ -73,54 +73,46 @@
 </script>
 
 <div class="h-full flex-col justify-start items-start gap-[18px] inline-flex w-full">
-	<div class="self-stretch text-light text-lg font-bold font-['Nunito Sans']">
-		Device summary
-	</div>
-	<div class="self-stretch h-[376px] flex-col justify-start items-start gap-0.5 flex dark:bg-templateDarkClr">
+	<p class="text-light dark:text-dark text-lg font-bold">Device summary</p>
+	<div
+		class="self-stretch flex-col justify-start items-start flex text-light dark:bg-templateDarkClr"
+	>
 		<!-- Header Row -->
 		<div
-			class="self-stretch h-[61px] px-6 md:px-[122px] py-[13px] flex justify-center items-center gap-2.5 border-2 rounded-[10px] dark:bg-black"
+			class="self-stretch h-fit px-6 py-4 flex justify-center items-center gap-2.5 border-2 rounded-[10px] dark:bg-templateDarkClr mb-1"
 		>
-			<div class="w-full flex items-center justify-between dark:text-dark ">
-				<div class="w-1/4 text-center text-[15px] font-bold font-['Nunito Sans'] whitespace-nowrap">
-					Device type
-				</div>
-				<div
-					class="w-1/4 text-center text-[15px] font-bold font-['Nunito Sans'] whitespace-nowrap hidden lg:block"
-				>
+			<div class="w-full flex items-center justify-between dark:text-dark">
+				<div class="w-1/4 text-center text-[15px] font-bold whitespace-nowrap">Device type</div>
+				<div class="w-1/4 text-center text-[15px] font-bold whitespace-nowrap hidden lg:block">
 					Friendly Name
 				</div>
-				<div class="w-1/4 text-center text-[15px] font-bold font-['Nunito Sans'] whitespace-nowrap">
-					KPN
-				</div>
-				<div class="w-1/4 text-center text-[15px] font-bold font-['Nunito Sans'] whitespace-nowrap">
-					Count
-				</div>
+				<div class="w-1/4 text-center text-[15px] font-bold whitespace-nowrap">KPN</div>
+				<div class="w-1/4 text-center text-[15px] font-bold whitespace-nowrap">Count</div>
 			</div>
 		</div>
 		<!-- Data Rows -->
 		{#each items as item}
 			<div
-				class="self-stretch h-[61px] px-6 md:px-[122px] py-[13px] flex justify-center items-center gap-2.5 border-2 rounded-[10px] dark:bg-black"
+				class="self-stretch px-6 py-4 flex justify-center items-center border-2 rounded-lg dark:bg-templateDarkClr mb-1"
 			>
 				<div class="w-full flex items-center justify-between dark:text-dark">
 					<div
-						class="w-1/4 text-center text-[15px] font-normal font-['Nunito Sans'] whitespace-nowrap"
+						class="w-1/4 text-center text-sm font-normal whitespace-nowrap"
 					>
 						{item.type}
 					</div>
 					<div
-						class="w-1/4 text-center text-[15px] font-normal font-['Nunito Sans'] whitespace-nowrap hidden lg:block"
+						class="w-1/4 text-center text-sm font-normal whitespace-nowrap hidden lg:block"
 					>
 						{item.name}
 					</div>
 					<div
-						class="w-1/4 text-center text-[15px] font-normal font-['Nunito Sans'] whitespace-nowrap"
+						class="w-1/4 text-center text-sm font-normal whitespace-nowrap"
 					>
 						{item.KPN}
 					</div>
 					<div
-						class="w-1/4 text-center text-[15px] font-normal font-['Nunito Sans'] whitespace-nowrap"
+						class="w-1/4 text-center text-sm font-normal whitespace-nowrap"
 					>
 						{item.count}
 					</div>
