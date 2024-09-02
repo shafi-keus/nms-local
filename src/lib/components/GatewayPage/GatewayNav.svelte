@@ -17,7 +17,7 @@
 			on:click={() => changeOption(navTab)}
 			class=" {active == navTab
 				? 'bg-primary-900 text-white hover:bg-blue-800 dark:bg-primary-900 dark:hover:bg-blue-800'
-				: 'bg-templateClr'}"
+				: 'bg-templateClr text-light'} "
 			size="sm"
 			color="light"
 		>

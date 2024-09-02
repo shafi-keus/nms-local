@@ -44,9 +44,6 @@
 </script>
 
 <Button
-	class="{circle ? 'rounded-full' : ''} relative  focus-within:ring-0 ${!noShadow
-		? 'shadow-lightNormal'
-		: ''} dark:shadow-darkNormal{className}"
 	{disabled}
 	{style}
 	{size}
@@ -58,6 +55,9 @@
 	on:mouseleave
 	on:keyup
 	on:keydown
+	class="{circle ? 'rounded-full' : ''} relative  focus-within:ring-0 ${!noShadow
+		? 'shadow-lightNormal dark:shadow-darkNormal'
+		: ''}  {className}"
 >
 	{#if badge}
 		<Badge color={badgeColor} class="absolute bottom-3/4 left-3/4 rounded-full">{badgeTxt}</Badge>

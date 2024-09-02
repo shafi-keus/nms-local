@@ -6,7 +6,7 @@
 </script>
 
 <Modal {title} bind:open autoclose class="dark:text-white">
-    <slot name="header" class="text-base leading-relaxed text-gray-500 dark:text-gray-400"/>
+    <slot name="header" class="text-base leading-relaxed text-light dark:text-gray-400"/>
     <slot name="content"class="text-base leading-relaxed text-gray-500 dark:text-gray-400"/>
     <slot />
 </Modal>

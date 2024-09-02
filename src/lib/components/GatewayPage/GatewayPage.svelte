@@ -4,12 +4,14 @@
 	import GatewayCard from '../GatewayCard.svelte';
 	import GatewayNav from './GatewayNav.svelte';
 	import Modal from '../Modal.svelte';
+	import GroupButton from '../GroupButton.svelte';
+	import Info from '../Info.svelte';
 	let open = false;
 </script>
 
-<div class="bg-white dark:bg-gray-800 p-3 rounded-md">
+<div class="bg-white dark:bg-templateDarkClr p-3 rounded-md">
 	<GatewayNav />
-	<div class="mb-3"></div>
+	<!-- <div class="mb-3"></div>
 	<Button color="alternative" size="xs" on:click={() => console.log('hii')}>hii</Button>
 	<Button color="blue" size="sm">hii</Button>
 	<Button color="green" pill>hii</Button>
@@ -47,7 +49,9 @@
 		<GatewayCard />
 	</div>
 
-	<!-- <input type="radio" name="radio" class="border-blue-600" />
-	<input type="radio" name="radio" /> -->
+	<input type="radio" name="radio" class="border-blue-600" />
+	<input type="radio" name="radio" />
+	<GroupButton/> -->
+	<Info/>
 
 </div>

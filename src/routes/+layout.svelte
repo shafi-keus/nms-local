@@ -19,13 +19,13 @@
 <div class="flex flex-col h-screen">
 	<!-- App nav -->
 	<nav
-		class="bg-white h-fit flex-shrink-0 p-4 flex justify-between items-center z-10 dark:bg-gray-800"
+		class="bg-white h-fit flex-shrink-0 p-4 flex justify-between items-center z-10 dark:bg-templateDarkClr"
 	>
 		<div class="cursor-pointer" on:click={toggleSidebar}>
 			{#if isCollapsed}
-				<span class="font-bold">☰</span>
+				<span class="font-bold dark:text-dark">☰</span>
 			{:else}
-				<span class=" text-lg font-bold">Keus<span class="text-primary-900">NMS</span></span>
+				<span class=" text-lg font-bold dark:text-dark">Keus<span class="text-primary-900">NMS</span></span>
 			{/if}
 		</div>
 		<Search />
@@ -35,7 +35,8 @@
 	<div class="flex flex-1 overflow-y-auto">
 		<!-- Sidebar nav-->
 		<nav
-			class={`transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'} sticky top-0 bg-white text-black dark:text-white dark:bg-gray-800`}
+			class={`duration-300 ${isCollapsed ? 'w-16' : 'w-64'} sticky top-0 bg-white text-black dark:text-dark dark:bg-templateDarkClr`}
+			style="transition-property: width;"
 		>
 			<div>
 				{#each tabsArr as tab, i}
@@ -61,8 +62,11 @@
 		</nav>
 
 		<!-- SLOT -->
-		<!-- <div class="p-4 bg-templateClr dark:bg-black" on:click={() => (isCollapsed = true)}> -->
-		<slot></slot>
-		<!-- </div> -->
+		<div
+			class="p-4 flex-1 bg-templateClr dark:bg-black h-full overflow-y-auto"
+			on:click={() => (isCollapsed = true)}
+		>
+			<slot></slot>
+		</div>
 	</div>
 </div>
